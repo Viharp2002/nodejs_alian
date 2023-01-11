@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "hbs": "^4.2.0",
+    "mongoose": "^6.4.0"
+  }
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+     {{#if msg}}<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{msg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>{{/if}}
+    <div id="bg">
+        <center> </center>
+        <br>
+        <b><u>
+                <h1>STUDENT REGISTRATION FORM</h1>
+            </u> </b>
+        <div id="form">
+            <form method="post" name="frm" action="/register" onsubmit="return sdf()">
+                <table id="table">
+                    <tr>
+                        <td>FIRST NAME:</td>
+                        <td>
+                            <input type="text" id="fname" name="username" size="30" placeholder="Enter first name" />
+                            <p class="disp">*max 30 characters A-Z and a-z</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LAST NAME:
+                        </td>
+                        <td>
+                            <input type="text" id="lname" name="usernamee" size="30" placeholder="Enter last name" />
+                            <p class="disp2">*max 30 characters A-Z and a-z</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            DATE OF BIRTH:
+                        </td>
+                        <td>
+                            <input type="number" id="day" name="day" size="2" maxlength="2"  placeholder="Day" min="1" max="31" />
+                            
+                            <select value="Month" id="mon" name="month">
+                                <option value="month">Month</option>
+                                <option value="Jan">Jan</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="Apr">Apr</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="Aug">Aug</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Oct">Oct</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dec</option>
+                            </select>
+                             
+                            <input type="number" id="year" class="yearr" name="year" size="5" min="1900" max="2016" maxlength="4" placeholder="Year" min="1991" max="2005" />
+                            <p class="disp3">*Year should be lie between 1991 and 2005</p>
+                            <P></P>
+                            <p class="disp10">*please select any month</p>
+                            <p></p>
+                            <p class="disp18">*Select Date between 1 to 31</p>
+
+                        </td>
+                    </tr>
+                     
+                    <tr>
+                        <td>EMAIL ID:
+                        </td>
+                        <td><input type="text" id="email" name="email" size="30" />
+                        <p class="disp4">*email should be in format like abc@xyz.com</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MOBILE NO:
+                        </td>
+                        <td><input type="tel" name="number" id="tel" size="30" maxlength="10" placeholder="Enter Mobile no" />
+                      <p class="disp5">*10 digits number</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GENDER:</td>
+                        <td><input id="female" type="radio" name="gender" value="f" checked>
+                            <label for="female">Female</label>
+                            <input id="male" type="radio" name="gender" value="m">
+                            <label for="male">Male</label>
+                            <p class="disp17">*required</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ADDRESS:</td>
+                        <td><textarea rows="4" style="width:300px; height:80px" name="add" cols="45" id="comments" >
+                        </textarea>
+                    <p class="disp15">*address should be filled</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CITY:</td>
+                        <td>
+                            <input type="text" id="city" name="city" size="30" maxlength="30"
+                                placeholder="Enter your city name"  />
+                                <p class="disp14">*city name is required</p>
+                            </td>
+                    </tr>
+                    <tr>
+
+                        <td>PIN CODE:</td>
+                        <td>
+                            <input type="number" id="pin" name="pin" placeholder="Enter pin code" />
+                            <p class="disp6">*6 digits number</p>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>STATE:</td>
+                        
+                        <td>
+                            <input type="text" name="state" size="30" id="state" maxlength="30"
+                                placeholder="Enter your state name"  />
+                                <p class="disp12">*statename required</p> 
+                            </td>
+                                  
+                    </tr>
+                     
+                    <tr>
+                        <td>COUNTRY:</td>
+                        <td>
+                            <input type="text" id="county" name="COUNTRY" size="30" maxlength="30"
+                                placeholder="Enter your city name"  />
+                                <p class="disp13">*country name required</p>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td  >HOBBIES</td>
+                        
+                        <td>
+                            <input type="checkbox" name="HOBBIES" value="Singing" /> Singing
+                            <input type="checkbox" name="HOBBIES" value="dancing" /> Dancing
+                            <input type="checkbox" name="HOBBIES" value="Drawing" /> Drawing
+                            <input type="checkbox" name="HOBBIES" value="Sketching" /> Sketching
+                            <br />
+                            <input type="checkbox" id="bc" name="HOBBIES" value="Others" /> Others<input type="text"
+                                name="HOBBIE" class="xz" id="qa" placeholder="Enter any other hobby" />
+                                <p class="disp19">*Maximum 30 characters from A to Z</p>
+                                <p></p>
+                                <p class="disp9">*please select at least one hobby</p>
+                                <p></p>
+                                <p class="disp11">*tell us about other hobbies</p>
+                        
+                            </td>
+                       
+                    </tr>
+                    
+                    <tr>
+                        
+                        <td><p style="margin-left:-40px;">QUALIFICATION</td>
+                        
+                        <td>
+                            <table style="margin-left:-130px;" width="600px" , height="100px">
+                                <tr>
+                                    <th><p style="margin-left: -30px;">S.N0</th>
+                                    <th><p style="margin-left: -10px;">Examination</th>
+                                    <th>Board</th>
+                                    <th>Percentage</th>
+                                    <th>Year of Passing</th>
+                                </tr>
+                                <tr>
+                                    <td>1.</td>
+                                    <th>Class X</th>
+                                    <td> <input type="text" name="state1" size="20" id="11" maxlength="20"/></td>
+                                    <td><input type="text" id="12" name="pr1" size="15" maxlength="10"/></td>
+                                    <td><input type="number" id="y1" name="ye1" size="15" min="2005" max="2022" minlength="4" maxlength="4"/></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <th>Class XII</th>
+                                    <td> <input type="text" name="state2" size="20" id="22" maxlength="20" /></td>
+                                    <td><input type="text" id="13" name="pr2" size="15" maxlength="10" /></td>
+                                    <td><input type="number" id="y2" name="ye2" size="15" min="2005" max="2022" minlength="4" maxlength="4"/></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <th>Graduation</th>
+                                    <td> <input type="text" id="33" name="state3" size="20" maxlength="20"  /></td>
+                                    <td><input type="text" id="14" name="pr3" size="15" maxlength="10"  /></td>
+                                    <td><input type="number" id="y3" name="ye3" size="15" min="2005" max="2022" minlength="4" maxlength="4"/></td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <th>Masters</th>
+                                    <td> <input type="text" id="44" name="state4" size="20" maxlength="20"  /></td>
+                                    <td><input type="text" id="15" name="pr4" size="15" maxlength="10"  /></td>
+                                    <td><input type="number" id="y4" name="ye4" size="15" min="2005" max="2022" minlength="4" maxlength="4"/></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td><p class="disp7i">*clas x required</p>
+                                        <p></p><br>
+                                        <p class="disp7j">*clas xii required</p>
+                                        <p></p><br>
+                                        <p class="disp7o">*Graduation required</p>
+                                        <p></p><br>
+                                        <p class="disp7r">*Masters required</p>
+                                    </td>
+                                    <td><p class="disp8i">*2 decimal:classx</p>
+                                        <br><p></p>
+                                        <p class="disp8j">*2 decimal:classxii</p>
+                                        <br><p></p>
+                                        <p class="disp8o">*2 deci:gradtuate</p>
+                                        <br><p></p>
+                                        <p class="disp8r">*2 decimal:masters</p>
+                                    </td>
+                                        <td><p class="disp20">*year is required</p></td>
+
+                                    
+                                    <td></td>
+                                    
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>COURSES:</td>
+                        <td><input id="BCA" type="radio" name="COURSES" checked  value="BCA"/>
+                            <label for="BCA">BCA</label>
+                            <input id="B.Com" type="radio" name="COURSES" value="B.Com" />
+                            <label for="B.Com">B.Com</label>
+                            <input id="B.Sc" type="radio" name="COURSES" value="B.Sc" />
+                            <label for="B.Sc">B.Sc</label>
+                            <input id="B.A" type="radio" name="COURSES" value="B.A" />
+                            <label for="B.A">B.A</label>
+                            <p class="disp16">*select course</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn btn-primary" type="submit">Submit</buttoncl>
+                            <button class="btn btn-primary" style="margin-left: 130px; margin-top:-40px" type="reset">Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
+</body>
+</html>
